@@ -9,9 +9,10 @@ const initialState = {
 function exampleReducer(state = initialState, action) {
   switch (action.type) {
     case SET_MESSAGE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         helloMessage: action.message,
-      });
+      }
     default:
       return state;
   }
